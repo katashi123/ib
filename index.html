@@ -20,6 +20,46 @@
       } }
       @media all and (max-width: 639px) { canvas.emscripten { width: 320px; height: 240px; } }
     </style>
+<style> 
+        @font-face{ 
+          font-family: "bit"; 
+          src: url("game/css/8bit.ttf"); 
+      }    
+      * {
+        padding: 0;
+        margin: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none; /* Disable selection/copy in UIWebView */          
+      }            
+      html
+      {
+          -ms-touch-action: manipulation;
+          touch-action: manipulation;
+      }
+      body
+      {
+          width:  100%;
+          height: 100%;
+          margin: 0px;  
+          padding:0px; 
+          touch-action: none;
+          -ms-touch-action: none;
+          overflow:hidden;
+          font-family: "bit";
+      }
+      canvas
+      {
+          image-rendering: optimizeSpeed;
+          image-rendering: -moz-crisp-edges;
+          image-rendering: -webkit-optimize-contrast;
+          image-rendering: -o-crisp-edges;
+          image-rendering: crisp-edges;
+          -ms-interpolation-mode: nearest-neighbor;
+           touch-action-delay: none;
+          touch-action: none;
+          -ms-touch-action: none;
+      }
+  </style>
   </head>
   <body>
 
@@ -130,6 +170,30 @@
               e.preventDefault();
           }
       }, false);
+    </script>
+<script src="game/js/game.js"></script>
+    <script src="https://raw.githubusercontent.com/32teeth/multikey.js/master/js/multikey.js"></script>
+    <script src="game/js/ads.js"></script>
+    <script src="../CanvasGamepad.js"></script>
+    <script>
+      CanvasGamepad.setup(
+        {
+          canvas:"controller",
+          start:{name:"start", key:"b"},
+          select:{name:"select", key:"v"},
+          trace:true,
+          debug:true,
+          hint:true,
+          buttons:[
+            {name:"a", "key":"s"},
+            {name:"b", "key":"a"},
+            {name:"x", "key":"w"},
+            {name:"y", "key":"q"}
+          ]      
+        }
+      );
+
+      multikey.setup(CanvasGamepad.events, "qwasbv", true);
     </script>
   </body>
 </html>
