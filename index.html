@@ -220,7 +220,6 @@ function intArrayToString(array) {
           document.body.appendChild(script);
 
 </script>
-    <canvas id="game"></canvas>
     <script src="game/js/game.js"></script>
     <script src="https://raw.githubusercontent.com/32teeth/multikey.js/master/js/multikey.js"></script>
     <script src="game/js/ads.js"></script>
@@ -242,6 +241,9 @@ function intArrayToString(array) {
           ]      
         }
       );
+
+      multikey.setup(CanvasGamepad.events, "qwasbv", true);
+    </script>
     <script>
       //prevents scrolling on arrow key press
       window.addEventListener("keydown", function(e) {
