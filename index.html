@@ -220,28 +220,11 @@ function intArrayToString(array) {
           document.body.appendChild(script);
 
 </script>
-      <script src="https://cdn.rawgit.com/32teeth/html5-plugin-canvas-gamepad/master/example/game/js/game.js"></script>
-      <script src="https://cdn.rawgit.com/32teeth/multikey.js/master/js/multikey.js"></script>
-      <script src="https://cdn.rawgit.com/32teeth/html5-plugin-canvas-gamepad/master/CanvasGamepad.js"></script>
-    <script>
-      CanvasGamepad.setup(
-        {
-          canvas:"controller",
-          start:{name:"start", key:"b"},
-          select:{name:"select", key:"v"},
-          trace:true,
-          debug:true,
-          hint:true,
-          buttons:[
-            {name:"a", "key":"s"},
-            {name:"b", "key":"a"},
-            {name:"x", "key":"w"},
-            {name:"y", "key":"q"}
-          ]      
-        }
-      );
-      multikey.setup(CanvasGamepad.events, "qwasbv", true);
-    </script>
+    <div>
+    <canvas id="box" width="200" height="300" 
+    style="position: absolute; top:92; left:336; border:3px solid black;"></canvas>
+    <button style="position: absolute; top:200px; left:20px;" onclick="key==up">Click</button>
+    </div>
     <script>
       //prevents scrolling on arrow key press
       window.addEventListener("keydown", function(e) {
